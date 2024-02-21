@@ -5,12 +5,15 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './config.js';
+import clientRoutes from '../src/client/client.js';
 
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
+        this.clientPath = '/api/v1/client';
+
 
         this.conectarDB();
         this.middlewares();
@@ -27,7 +30,7 @@ class Server{
         this.app.use(express.json());
     }
     routes(){
-        
+        this.app.use(this.clientPath, clientRoutes)
     }
     listen(){
         this.app.listen(this.port, () =>{
