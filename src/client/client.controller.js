@@ -33,13 +33,12 @@ export const clientPut = async(req, res =response)=>{
     })
 } 
 
-export const deleteClient = async(req, res)=>{
-    const {id} = req.params;
-    const client = await Client.findByIdAndUpdate(id, {estado: false});
-    const authenticatedClient = req.client;
-    res.status(200).json({
-        msg: 'Your profile has been deleted',
-        client,
-        authenticatedClient
-    })
+export const deleteClient = async (req, res) => {
+    const { id } = req.params;
+    const client = await Client.findByIdAndUpdate(id, { estado: false });
+    
+    res.status(200).json({ 
+        msg: 'Your Profile has been deleted', 
+        client
+    });
 }

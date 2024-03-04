@@ -6,3 +6,10 @@ export const existeEmail = async(correo='')=>{
         throw new Error(`El email ${correo} ya fue registrado`);
     }
 }
+
+export const existClientById = async (id = '')=>{
+    const existClient = await Client.findById(id);
+    if(!existClient){
+        throw new Error(`The ID: ${id} doesn't exist`);
+    }
+}

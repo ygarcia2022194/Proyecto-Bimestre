@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import {clientPost} from "./client.controller.js"
-import { existeEmail } from "../helpers/db-validators.js";
+import {clientPost, clientPut, deleteClient} from "./client.controller.js"
+import { existeEmail, existClientById } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 const router = Router();
 
@@ -15,6 +15,20 @@ router.post(
         validarCampos
     ],clientPost);
 
+router.put(
+    "/:id",
+    [
+        check("id", "No es un ID valido").isMongoId(),
+        check("id").custom(existClientById),
+        validarCampos
+    ],clientPut);
+
+
+router.delete(
+    "/:id",[
+        check("id", "No es un ID valido").isMongoId(),
+        check("id").custom(existClientById),
+    ],deleteClient);
 
 
 export default router;
