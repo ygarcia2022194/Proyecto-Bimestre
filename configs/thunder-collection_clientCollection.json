@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "clientCollection",
+    "dateExported": "2024-03-04T23:29:05.985Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6bec6692-2c29-45d3-aac3-675efe3a04b7",
+            "colId": "79b2b20c-214b-45a3-a492-c1f6718b8e4f",
+            "containerId": "",
+            "name": "clientPost",
+            "url": "http://localhost:8080/salesCompany/v1/client",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-04T20:35:29.351Z",
+            "modified": "2024-03-04T21:46:11.961Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Stanley Palencia\",\n  \"correo\": \"spalencia10@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c8c5b9bf-aa8c-4bfe-acad-d97c7722972a",
+            "colId": "79b2b20c-214b-45a3-a492-c1f6718b8e4f",
+            "containerId": "",
+            "name": "clientPut",
+            "url": "http://localhost:8080/salesCompany/v1/client/65e64123d893b6c02840a919",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-04T21:44:44.411Z",
+            "modified": "2024-03-04T21:47:56.154Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Stanley Garcia\",\n  \"correo\": \"sgarcia10@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7771e05e-f489-4c96-8817-7b50c01d1239",
+            "colId": "79b2b20c-214b-45a3-a492-c1f6718b8e4f",
+            "containerId": "",
+            "name": "clientDelete",
+            "url": "http://localhost:8080/salesCompany/v1/client/65e63305c04deb3b09e47707",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-04T21:48:19.946Z",
+            "modified": "2024-03-04T22:13:17.446Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
