@@ -5,14 +5,14 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
-import clientRoutes from '../src/client/client.js';
+import clientRoutes from '../src/client/client.routes.js';
 
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.clientPath = '/api/v1/client';
+        this.clientPath = '/salesCompany/v1/client';
 
 
         this.conectarDB();

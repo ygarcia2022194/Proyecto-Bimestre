@@ -13,4 +13,8 @@ router.post(
         check("correo", "Este no es un correo valido").isEmail(),
         check("correo").custom(existeEmail),
         validarCampos
-    ],clientPost)
+    ],clientPost);
+
+
+
+export default router;
