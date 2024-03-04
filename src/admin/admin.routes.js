@@ -1,8 +1,8 @@
 import {Router} from "express";
 import { check } from "express-validator";
-import { adminPost } from "./admin.controller";
-import {existeEmailA} from "../helpers/db-validators";
-import { validarCampos } from "../middlewares/validar-campos";
+import { adminPost } from "./admin.controller.js";
+import {existeEmailA} from "../helpers/db-validators.js";
+import { validarCampos } from "../middlewares/validar-campos.js";
 
 
 const router = Router();
@@ -16,3 +16,5 @@ router.post(
         check("correo").custom(existeEmailA),
         validarCampos
     ],adminPost)
+
+export default router;

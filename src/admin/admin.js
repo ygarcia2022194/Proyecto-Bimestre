@@ -26,7 +26,7 @@ const AdminSchema = mongoose.Schema({
 })
 
 AdminSchema.methods.toJSON = function(){
-    const {_v, password, id, ...admin} = this.toObjectId();
+    const {_v, password, _id, ...admin} = this.toObject();
     admin.uid = _id;
     return admin;
 }

@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import clientRoutes from '../src/client/client.routes.js';
+import adminRoutes from '../src/admin/admin.routes.js';
 
 
 class Server{
@@ -13,7 +14,7 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         this.clientPath = '/salesCompany/v1/client';
-
+        this.adminPath = '/salesCompany/v1/admin';
 
         this.conectarDB();
         this.middlewares();
@@ -30,7 +31,8 @@ class Server{
         this.app.use(express.json());
     }
     routes(){
-        this.app.use(this.clientPath, clientRoutes)
+        this.app.use(this.clientPath, clientRoutes);
+        this.app.use(this.adminPath, adminRoutes);
     }
     listen(){
         this.app.listen(this.port, () =>{
