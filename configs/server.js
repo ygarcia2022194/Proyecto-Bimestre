@@ -4,7 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { dbConnection } from './config.js';
+import { dbConnection } from './mongo.js';
 import clientRoutes from '../src/client/client.js';
 
 
