@@ -7,7 +7,8 @@ const ClientSchema = mongoose.Schema({
     },
     correo:{
         type: String,
-        require: [true, 'El correo es obligatorio']
+        require: [true, 'El correo es obligatorio'],
+        unique: true
     },
     password:{
         type: String,
