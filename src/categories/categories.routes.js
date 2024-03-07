@@ -31,5 +31,12 @@ router.put(
         validarCampos
     ],categoriesPut);
 
-
+router.delete(
+    "/:id",
+    [
+        validarJWT,
+        check("id", "Id not valid").isMongoId(),
+        check("id").custom(existCategorieById),
+        validarCampos
+    ],categoriesDelete);
 export default router;
