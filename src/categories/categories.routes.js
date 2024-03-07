@@ -14,13 +14,13 @@ import {validarJWT} from '../middlewares/validar-jwt.js';
 
 const router = Router();
 
-router.get("/", categoriesPost);
+router.get("/", categoriesGet);
 
 router.post(
     "/"
     ,[
         check("nombre").custom(existCategorie),
-        check('descripcion', "The descriptin is obligatory").not().isEmpty(),
+        check('descripcion', "The description is obligatory").not().isEmpty(),
         validarCampos
     ],categoriesPost);
 
