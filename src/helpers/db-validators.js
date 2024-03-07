@@ -1,6 +1,7 @@
 import Admin from '../admin/admin.js';
 import Client from '../client/client.js';
 import Product from '../products/products.js';
+import Categories from '../categories/categories.js'
 
 export const existeEmail = async(correo='')=>{
     const existeEmail = await Client.findOne({correo});
@@ -34,6 +35,20 @@ export const existProductById = async(id='')=>{
     const existProductById = await Product.findById(id);
     if(!existClientById){
         throw new Error(`The product by ID: ${id} doesn't exist`);
+    }
+}
+
+export const existCategorie = async (nombre='')=>{
+    const existCategorie = await Categories.findOne({nombre});
+    if(existCategorie){
+        throw new Error(`The categorie ${nombre} has already been registered`);
+    }
+}
+
+export const existCategorieById = async(id='')=>{
+    const existCategorie = await Categories.findById(id);
+    if(!existCategorie){
+        throw new Error(`The ID: ${nombre} don't exist`)
     }
 }
 

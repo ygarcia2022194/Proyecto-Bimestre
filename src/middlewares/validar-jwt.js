@@ -1,4 +1,4 @@
-import { Jwt } from "jsonwebtoken";
+import jwt  from "jsonwebtoken";
 import Admin from '../admin/admin.js';
 import Client from '../client/client.js';
 import {request, response} from 'express';
