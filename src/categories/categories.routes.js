@@ -24,4 +24,12 @@ router.post(
         validarCampos
     ],categoriesPost);
 
+router.put(
+    "/:id",[
+        check("id","Id no valid").isMongoId(),
+        check("id").custom(existCategorieById),
+        validarCampos
+    ],categoriesPut);
+
+
 export default router;
