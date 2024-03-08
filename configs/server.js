@@ -9,6 +9,7 @@ import clientRoutes from '../src/client/client.routes.js';
 import adminRoutes from '../src/admin/admin.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import categorieRoutes from '../src/categories/categories.routes.js';
+import productRoutes from '../src/products/products.router.js';
 
 
 class Server{
@@ -18,7 +19,8 @@ class Server{
         this.clientPath = '/salesCompany/v1/client';
         this.adminPath = '/salesCompany/v1/admin';
         this.authPath = '/salesCompany/v1/auth';
-        this.categoriePath = '/salesCompany/v1/categorie'
+        this.categoriePath = '/salesCompany/v1/categorie';
+        this.productPath = '/salesCompany/v1/product';
 
         this.conectarDB();
         this.middlewares();
@@ -39,6 +41,7 @@ class Server{
         this.app.use(this.adminPath, adminRoutes);
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.categoriePath, categorieRoutes);
+        this.app.use(this.productPath, productRoutes);
     }
     listen(){
         this.app.listen(this.port, () =>{

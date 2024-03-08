@@ -2,7 +2,7 @@ import {response, request} from "express";
 import mongoose from "mongoose";
 import Products from './products.js';
 import Categories from '../categories/categories.js';
-import categories from "../categories/categories.js";
+
 
 
 export const productPost = async (req, res)=>{

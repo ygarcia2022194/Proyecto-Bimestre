@@ -52,3 +52,27 @@ export const existCategorieById = async(id='')=>{
     }
 }
 
+export const validarPrecio = async (precio='')=>{
+    if(precio === null || isNaN(precio) || precio <0){
+        throw new Error('The price must be a valid number greater than 0');
+    }
+    if(precio <0){
+        throw new Error('The price cannot be negative');
+    }
+    if(precio==0){
+        throw new Error('The price cannot be 0')
+    }
+}
+
+export const validarStock = async (stock= '')=>{
+    if(stock === null || isNaN(stock) || stock <0){
+        throw new Error('The stock must be a valid number greater than 0');
+    }
+    if(!Number.isInteger(stock)){
+        throw new Error('The stock must be a whole number');
+    }
+    if(stock < 0){
+        throw new Error('The stock cannot be a negative');
+    }
+}
+
