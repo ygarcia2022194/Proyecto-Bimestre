@@ -34,9 +34,9 @@ export const categoriesPut= async (req, res= response)=>{
 
     try {
         const updateCategorie = await Categories.findByIdAndUpdate(id, resto, {new: true});
-        /*const filter = { idCategoria: id };
+        const filter = { idCategoria: id };
         const update = {$set: {idCategoria: updateCategorie._id}};
-        await Producto.updateMany(filter, update);*/
+        await Producto.updateMany(filter, update);
         res.status(200).json({
             msg: "Categorie update",
             categorie: updateCategorie
@@ -56,10 +56,10 @@ export const categoriesDelete = async(req, res)=>{
                 msg: "Categorie not found"
             });
         }
-        /*const alternativeCategorie = await Categories.findOne({nombre: "Almacen"});
+        const alternativeCategorie = await Categories.findOne({nombre: "Almacen"});
         const filter = {idCategorie: id};
         const update = {$et:{idCategorie: alternativeCategorie ? alternativeCategorie._id : null}};
-        await Producto.updateMany(filter, update);*/
+        await Producto.updateMany(filter, update);
         const updateCategorie = await Categories.findByIdAndUpdate(id, {estado: false},{new: true});
         res.status(200).json({
             msg: "Successfully deleted category",
@@ -67,6 +67,5 @@ export const categoriesDelete = async(req, res)=>{
         });
     } catch (error) {
         res.status(500).json({error: error.message});
-        
     }
 }
