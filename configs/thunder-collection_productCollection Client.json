@@ -1,0 +1,45 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productCollection Client",
+    "dateExported": "2024-03-08T05:29:10.652Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0ce21d81-ac8c-4bd3-a5a0-f68809a76180",
+            "colId": "cec97a52-6d66-4077-ac23-1b460558148f",
+            "containerId": "",
+            "name": "productSearchProduct",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T05:19:38.501Z",
+            "modified": "2024-03-08T05:19:38.501Z",
+            "headers": []
+        },
+        {
+            "_id": "6bf940b1-53e7-4f9b-af36-5d0818f8c0a8",
+            "colId": "cec97a52-6d66-4077-ac23-1b460558148f",
+            "containerId": "",
+            "name": "product SoldOut",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T05:21:26.265Z",
+            "modified": "2024-03-08T05:21:26.265Z",
+            "headers": []
+        },
+        {
+            "_id": "cc99e90e-3bd4-4558-89cd-5fdfc27cf933",
+            "colId": "cec97a52-6d66-4077-ac23-1b460558148f",
+            "containerId": "",
+            "name": "CatalogProduct",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-08T05:19:40.788Z",
+            "modified": "2024-03-08T05:19:40.788Z",
+            "headers": []
+        }
+    ]
+}

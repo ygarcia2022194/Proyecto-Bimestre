@@ -1,0 +1,81 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "categoriesCollection",
+    "dateExported": "2024-03-08T05:29:01.299Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "d4838f08-01cf-46f6-9464-515049008ca1",
+            "colId": "2f33b1c9-5a02-4d5e-b55b-371e3183f4f8",
+            "containerId": "",
+            "name": "categoriePost",
+            "url": "http://localhost:8080/salesCompany/v1/categorie",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-07T05:01:44.512Z",
+            "modified": "2024-03-08T05:05:30.728Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"categoria1\",\n  \"descripcion\": \"ojuelas de maiz\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "79e8d18a-7c3a-4d49-888d-1ce57593b59c",
+            "colId": "2f33b1c9-5a02-4d5e-b55b-371e3183f4f8",
+            "containerId": "",
+            "name": "categorieGet",
+            "url": "http://localhost:8080/salesCompany/v1/categorie",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-07T05:22:26.599Z",
+            "modified": "2024-03-07T05:22:38.298Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae7a6f3a-dd8f-48d3-9974-48eb773603db",
+            "colId": "2f33b1c9-5a02-4d5e-b55b-371e3183f4f8",
+            "containerId": "",
+            "name": "categoriePut",
+            "url": "http://localhost:8080/salesCompany/v1/categorie/65e94d9a5c589cb7e99090e0",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-07T05:43:56.683Z",
+            "modified": "2024-03-07T05:45:40.784Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Lacteos\",\n  \"descripcion\": \"Todo tipo de leche\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d2afb423-9156-43ff-9f36-256936278742",
+            "colId": "2f33b1c9-5a02-4d5e-b55b-371e3183f4f8",
+            "containerId": "",
+            "name": "categorieDelete",
+            "url": "http://localhost:8080/salesCompany/v1/categorie/65e94d9a5c589cb7e99090e0",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-07T05:48:31.955Z",
+            "modified": "2024-03-07T05:58:03.468Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU5NTc0MGZmMzFiN2EwMmZhMTBhYTAiLCJpYXQiOjE3MDk3OTEwNTUsImV4cCI6MTcwOTc5NDY1NX0.E241RHEwW_iQggAGpShcGZKROouU6yXM8nJBtEnzHvA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
