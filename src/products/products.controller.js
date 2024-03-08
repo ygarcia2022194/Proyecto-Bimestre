@@ -9,17 +9,17 @@ export const productPost = async (req, res)=>{
     const data = req.body;
 
     try {
-        const category = await Categories.findOne({nombre: data.category});
-        if(!category){
-            return res.status(400).json({
+        const categoria = await Categories.findOne({nombre: data.categoria});
+        if(!categoria){
+            return res.status(404).json({
                 msg: 'Category not found'
-            })
+            });
         }
 
-        const product = new Products({...data, category: category._id});
+        const product = new Products({...data, category: categoria._id});
         await product.save();
-        category.product.push(product._id);
-        await category.save();
+        categoria.product.push(product._id);
+        await categoria.save();
 
         res.status(200).json({
             msg: 'New product add',
