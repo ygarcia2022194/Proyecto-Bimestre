@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { mongo } from 'mongoose';
 
 const CategoriesSchema = mongoose.Schema({
     nombre:{
@@ -8,6 +8,10 @@ const CategoriesSchema = mongoose.Schema({
     descripcion:{
         type: String,
         required: [true, "The description is obligatory"]
+    },
+    producto: {
+        type: [mongoose.Schema.Types.ObjectId],
+        required: true
     },
     estado:{
         type: Boolean,
