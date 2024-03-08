@@ -1,0 +1,21 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cartCollection",
+    "dateExported": "2024-03-08T17:03:52.059Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4302800f-0640-4e4c-947a-cbf0666d4d08",
+            "colId": "65987a4a-44f5-49e8-957c-194a573a19fa",
+            "containerId": "",
+            "name": "cartPost",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T17:00:42.596Z",
+            "modified": "2024-03-08T17:00:42.598Z",
+            "headers": []
+        }
+    ]
+}
