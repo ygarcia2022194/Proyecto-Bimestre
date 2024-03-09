@@ -1,0 +1,45 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "facturaCollection",
+    "dateExported": "2024-03-09T07:16:44.719Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ea2b2ea1-4d22-4f1d-9746-dafb44f58241",
+            "colId": "6dbe4373-d00a-47b7-b84b-4ab8a672f3c4",
+            "containerId": "",
+            "name": "facturaPost",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-09T07:10:54.065Z",
+            "modified": "2024-03-09T07:10:54.065Z",
+            "headers": []
+        },
+        {
+            "_id": "3a29f570-642e-475a-8c85-a3acfef80b4e",
+            "colId": "6dbe4373-d00a-47b7-b84b-4ab8a672f3c4",
+            "containerId": "",
+            "name": "obtenerFactura",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-09T07:11:06.051Z",
+            "modified": "2024-03-09T07:11:06.051Z",
+            "headers": []
+        },
+        {
+            "_id": "feb2ab03-f670-4bda-bd60-94f82d5d0deb",
+            "colId": "6dbe4373-d00a-47b7-b84b-4ab8a672f3c4",
+            "containerId": "",
+            "name": "obtenerDetallesFactura",
+            "url": "",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-09T07:11:21.235Z",
+            "modified": "2024-03-09T07:11:21.235Z",
+            "headers": []
+        }
+    ]
+}
