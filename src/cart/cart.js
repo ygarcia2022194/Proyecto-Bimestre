@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 const ShoppingCartSchema = mongoose.Schema({
-    usuario:{
+    cliente:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Client',
-        required: true
+        ref: 'Client'
     },
     productos:[{
         nombreProducto:{
@@ -15,8 +14,7 @@ const ShoppingCartSchema = mongoose.Schema({
             required: true
         },
         precio: {
-            type: Number,
-            required: true
+            type: Number
         },
         subTotal:{
             type: Number
