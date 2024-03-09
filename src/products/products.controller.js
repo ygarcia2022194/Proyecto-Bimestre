@@ -5,43 +5,50 @@ import Categories from '../categories/categories.js';
 
 
 
-export const productPost = async (req, res)=>{
+export const productPost = async (req, res) => {
     const data = req.body;
-    const category = await Categories.findOne({nombre: data.category});
-    if(!category){
-        return res.status(400).json({msg: 'Category not found'});
-    }
-    const product = new Products({
-        ...data,
-        category: category._id
-    })
-    await product.save();
-    category.product.push(product._id);
-    await category.save();
 
-    res.status(201).json({msg: 'Product successfully added', product})
-}
-
-export const productGet = async(req,res)=>{
-    const {limite, desde} = req.query;
     try {
-        const [total, product] = await Promise.all([
-            Products.countDocuments({estado: true}),
-            Products.find({estado: true})
-            .populate('category', 'nombre')
-            .skip(Number(desde))
-            .limit(Number(limite))
+        const category = await Categories.findOne({ nombre: data.categoria });
+        if (!category) {
+            return res.status(400).json({ msg: 'Category not found' });
+        }
+        const newProduct = new Products({
+            ...data,
+            categoria: category._id
+        });
+        await newProduct.save();
+        if (!category.products) {
+            category.products = [];
+        }
+        category.products.push(newProduct._id);
+        await category.save();
+        res.status(201).json({ msg: 'Product successfully added', newProduct });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ msg: 'Internal Server Error' });
+    }
+};
+
+export const productGet = async (req, res) => {
+    const { limite, desde } = req.query;
+    try {
+        const [total, products] = await Promise.all([
+            Products.countDocuments({ estado: true }),
+            Products.find({ estado: true })
+                .populate('categoria', 'nombre')  // Agrega esta línea para hacer el populate del campo 'categoria' y obtener solo el campo 'nombre'
+                .skip(Number(desde))
+                .limit(Number(limite))
         ]);
         res.status(200).json({
             total,
-            product
-        })
+            products
+        });
     } catch (error) {
         console.error(error);
-        res.status(500).json({error: 'There was an error when obtaining the products.'});
+        res.status(500).json({ error: 'There was an error when obtaining the products.' });
     }
-}
-
+};
 export const productPut = async (req, res)=>{
     const {id} = req.params;
     const {_id, ...resto} = req.body;
