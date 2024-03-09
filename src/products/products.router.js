@@ -11,7 +11,7 @@ import { productDelete,
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { existProductById, productExist, validarPrecio, validarStock} from "../helpers/db-validators.js";
 import {validarJWT} from '../middlewares/validar-jwt.js';
-import { ChainCondition } from "express-validator/src/context-items/chain-condition.js";
+
 const router = Router();
 
 router.post(

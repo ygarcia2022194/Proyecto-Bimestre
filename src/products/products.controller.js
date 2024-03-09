@@ -58,13 +58,13 @@ export const productPut = async (req, res)=>{
     }
 
     try {
-        if(resto.category && !mongoose.Types.ObjectId.isValid(resto.category)){
-            const category = await Categories.findOne({nombre: resto.category});
+        if(resto.categoria && !mongoose.Types.ObjectId.isValid(resto.categoria)){
+            const category = await Categories.findOne({nombre: resto.categoria});
 
-            if(!categories){
+            if(!category){
                 return res.status(404).json({msg: 'Category not found'});
             }
-            resto.category = category._id;
+            resto.categoria = category._id;
         }
         const product = await Products.findByIdAndUpdate(id, resto, {new: true});
         if(!product){
@@ -122,20 +122,17 @@ export const searchProductsByName = async(req, res)=>{
 
 export const catalogProductsByCategory = async(req, res)=>{
     const {category} = req.params;
-    Categories.findOne({nombre:category})
-        .then(categoryFound=>{
-            if(!categoryFound){
-                return res.status(404).json({error: 'Category not found'});
-            }
-            return Products.find({category: categoryFound._id});
-        })
-        .then(product=>{
-            res.status(200).json(product);
-        })
-        .catch(error=>{
-            console.log('Error to getting catalog with products', error);
-            res.status(500).json({error: 'Error to getting catalog with products'});
-        });
+    try {
+        const foundCategory = await Categories.findOne({nombre: category})
+        if(!foundCategory){
+            return res.status(404).json({error:'Category not found'});
+        }
+        const product = await Products.find({categoria: foundCategory._id});
+        res.status(200).json({product})
+    } catch (error) {
+        console.error('Error when obtaining the product catalog by category', error);
+        res.status(500).json({error: 'Error when obtaining the product catalog by category'});
+    }
 }
 
 
