@@ -3,7 +3,7 @@ import Carrito from '../cart/cart.js';
 import { validationResult } from 'express-validator';
 
 export const crearFactura = async (req, res) => {
-    const usuario = req.usuario;
+    const cliente = req.cliente;
 
     try {
         const carrito = await Carrito.findOne({ usuario });
@@ -13,7 +13,7 @@ export const crearFactura = async (req, res) => {
         }
         const precioTotal = carrito.productos.reduce((total, producto) => total + producto.subtotal, 0);
         const nuevaFactura = new Factura({
-            usuario,
+            cliente,
             carrito: carrito._id,
             precioTotal
         });

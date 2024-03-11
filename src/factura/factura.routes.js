@@ -3,7 +3,7 @@ import {
     crearFactura,
     obtenerFacturasUsuario,
     obtenerDetallesFactura,
-} from "./facturas.controller.js";
+} from "./factura.controller.js";
 
 const router = Router();
 router.post("/",crearFactura);
